@@ -18,6 +18,7 @@ basic.forever(function () {
     if (pins.digitalReadPin(DigitalPin.P1) == 1) {
         Pocet += 1
         basic.showNumber(Pocet)
+        basic.pause(5000)
     } else {
         basic.showLeds(`
             . . . . .
