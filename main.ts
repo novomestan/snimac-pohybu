@@ -5,16 +5,19 @@ basic.showLeds(`
     . . . . .
     . . . . .
     `)
-basic.pause(500)
+basic.pause(5000)
+basic.showLeds(`
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    `)
+let Pocet = 0
 basic.forever(function () {
-    if (pins.digitalReadPin(DigitalPin.P0) == 1) {
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
+    if (pins.digitalReadPin(DigitalPin.P1) == 1) {
+        Pocet += 1
+        basic.showNumber(Pocet)
     } else {
         basic.showLeds(`
             . . . . .
@@ -24,5 +27,4 @@ basic.forever(function () {
             . . . . .
             `)
     }
-    basic.pause(100)
 })
